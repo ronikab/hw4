@@ -10,10 +10,18 @@
     <%= form.label "description" %>
     <%= form.text_field "description" %>
   </p>
+  <!--
+  <p>
+    <%= form.label "image" %>
+    <%= form.text_field "image" %>
+  </p>
+-->
+
   <p>
     <%= form.label "posted_on" %>
     <%= form.date_field "posted_on" %>
   </p>
+    <%= form.hidden_field "user_id" %>
   <p>
     <%= form.submit %>
   </p>
