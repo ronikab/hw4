@@ -1,15 +1,3 @@
-<!--
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Tacostagram Final</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <link rel="stylesheet" href="/stylesheets/application.css">
-  </head>
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +16,7 @@
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       
-      <a class="navbar-brand" href="/">Tacostagram!</a>
+      <a class="navbar-brand" >Tacostagram!</a>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,6 +44,7 @@
             <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
           <% else %>
             <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+            <li class="nav-item"><a class="nav-link">|</a></li>
             <li class="nav-item"><a href="/users/new" class="nav-link">Sign Up</a></li>
           <% end %>
         </div>
@@ -63,31 +52,7 @@
       </div>
     </div>
   </nav>
-
-  <!--
-    # <div>
-    #   <% %>
-    #   <% if @current_user != nil %>
-    #     Hey, <%= @current_user["username"] %>
-    #     |
-    #      <a href="/places" class="btn btn-default">Home</a>
-    #     |
-    #     <a href="/logout" class="btn btn-default">Logout</a>
--->
-        <!-- TODO: if logged in user, hide Login and Sign Up -->
-<!--    
-    #   <% else %>
-    #     <a href="/login" class="btn btn-default">Login</a> |
-    #     <a href="/users/new" class="btn btn-default">Sign Up</a>
-    #   <% end %>
--->
-      <!--
-      <a href="/">Home</a>
-      <a href="/logout">Logout</a>
-      <a href="/login">Login</a>
-      <a href="/users/new">Signup</a>
-      -->
-    </div>
+</div>
 
     <%= yield %>
   </body>
