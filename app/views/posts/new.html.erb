@@ -21,7 +21,14 @@
     <%= form.label "posted_on" %>
     <%= form.date_field "posted_on" %>
   </p>
+
+  <div class="mb-3">
+   <%= form.label "uploaded_image", :class => "form-label" %>
+   <%= form.file_field "uploaded_image", :class => "form-control" %>
+  </div>
+
     <%= form.hidden_field "user_id" %>
+  
   <p>
     <%= form.submit %>
   </p>

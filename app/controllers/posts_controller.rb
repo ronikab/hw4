@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.where({ "user_id" => session["user_id"] })
-    @posts = Post.all
+    @posts = Post.where({  "place_id" => @place["id"] , "user_id" => @current_user["id"] })
   end
 
   def new
@@ -22,6 +21,7 @@ class PostsController < ApplicationController
       @post["description"] = params["post"]["description"]
       @post["posted_on"] = params["post"]["posted_on"]
       @post["place_id"] = params["post"]["place_id"]
+      @post.uploaded_image.attach(params["post"]["uploaded_image"])
       @post["user_id"] = @current_user["id"]
       # @post["image"] = params["post"]["image"]
       @post.save
