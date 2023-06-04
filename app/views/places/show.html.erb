@@ -1,17 +1,17 @@
-<h1><%= @place["name"] %></h1>
+<h1 class= "py-3"><%= @place["name"] %></h1>
 
 <% if @current_user != nil %>
 <p>
-  <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-success">New Post</a>
+  <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-primary">New Post</a>
 </p>
 
 
 <div class="row">
 
 <% for post in @posts %>
-<div class="col-3">
-    <h3><%= post["title"] %></h3>
-    <h4><%= post["posted_on"] %></h4>
+<div class="col-xl-4 col-md-6">
+    <h4><%= post["title"] %></h4>
+    <p><%= post["posted_on"] %></p>
   
     <% if post.uploaded_image.attached? %>
      <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
@@ -26,7 +26,7 @@
 <% end %>
 
 <p>
-  <a href="/places">Back to All Places</a>
+  <a href="/places" class="btn btn-outline-secondary">Back to All Places</a>
 </p>
 
 </div>

@@ -1,10 +1,10 @@
-<h1>Places</h1>
+<h1 class= "py-3" >Places</h1>
 <p>
-  <a href="/places/new" class="btn btn-success" >New place</a>
+  <a href="/places/new" class="btn btn-primary" >New place</a>
 </p>
 
-<ul>
+<p>
   <% for place in @places %>
    <p> <a href="/places/<%= place["id"] %>"><%= place["name"] %></a> </p>
   <% end %>
-</ul>
+</p>
